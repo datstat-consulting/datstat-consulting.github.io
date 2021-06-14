@@ -1,0 +1,59 @@
+body {background-color: #080828; margin:60px; padding:50px; font-family: bookman;color: white;}
+h1 {color: white; font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; text-align:left;}
+h2 {color: white; font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; text-align:left;}
+h3 {color: white; font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; text-align:left;}
+h4 {color: white; font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; text-align:left;}
+h5 {color: white; font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; text-align:left;}
+p {color: white; text-align: justify; font-family:bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; font-size: large;}
+table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+
+blockquote {
+  font-family: bookman, Bookman URW, Perpetua, Garamond, Times, Times New Roman; font-size: medium; text-align:justify; color:white;
+}
+.center
+{
+ text-align:center;
+ display:block;
+}
+
+pdf-icon {
+ @import "nib"
+body
+  background: #f5f5f5
+  font-size: 13px
+  padding: 5em
+
+.pdf-icon
+  font-size: 100%
+  box-sizing: border-box
+  display: block
+  position: relative
+  width: 6em
+  height: 8.5em
+  background-color: #eee
+  background-image: pdf-icon.png
+  background-repeat: no-repeat
+  background-size: 85% auto
+  background-position: center 2em
+  border-radius: 1px 2em 1px 1px
+  border: 1px solid #ddd
+  &:after
+    content: 'PDF'
+    font-family: Arial
+    font-weight: bold
+    font-size: 1.2em
+    text-align: center
+    padding: .2em 0 .1em
+    color: white
+    display: block
+    position: absolute
+    top: .7em
+    left: -1.5em
+    width: 3.4em
+    height: auto
+    background: #da2525
+    border-radius: 2px 
+}
