@@ -1,4 +1,4 @@
-body {margin:60px; padding:50px; font-family: 'Fira Sans', sans-serif;}
+body {font-family: 'Fira Sans', sans-serif;}
 
 h1 {text-align: center; font-family: 'Fira Sans', sans-serif;}
 
@@ -24,6 +24,7 @@ aside > p {
 
 p {
     font-family: 'Fira Sans', sans-serif;
+    margin:60px;
 }
 
 blockquote {
