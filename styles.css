@@ -1,9 +1,9 @@
 body {margin:60px; padding:50px; font-family: bookman;}
 
-.row {
+row {
   display: flex;
 }
 
-.column {
+column {
   flex: 50%;
 }
