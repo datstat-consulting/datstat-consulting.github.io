@@ -38,7 +38,7 @@ blockquote {
 blockquote:before {
   color: #ccc;
   content: open-quote;
-  font-size: 40px;
+  font-size: 80px;
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
@@ -46,7 +46,7 @@ blockquote:before {
 blockquote:after {
   color: #ccc;
   content: close-quote;
-  font-size: 40px;
+  font-size: 80px;
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
