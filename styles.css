@@ -13,13 +13,13 @@ column {
 }
 
 aside {
-    width: 40%;
-    padding-left: .5rem;
-    margin-left: .5rem;
+    width: 10%;
+    padding-right: .5rem;
+    margin-right: .5rem;
     float: left;
     box-shadow: inset 5px 0 5px -5px #29627e;
     font-style: italic;
-    color: #29627e;
+    color: #000000;
 }
 
 aside > p {
