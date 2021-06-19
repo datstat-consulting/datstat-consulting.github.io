@@ -14,9 +14,8 @@ column {
 
 aside {
     width: 10%;
-    margin-right: .5rem;
     float: left;
-    color: #000000;
+    color: #aaa;
 }
 
 aside > p {
