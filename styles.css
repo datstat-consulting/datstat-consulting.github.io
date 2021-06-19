@@ -69,7 +69,7 @@ p {text-align:justify}
     position: relative;
   }
   .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+  .content {margin-left: 0;}
 }
 
 @media screen and (max-width: 400px) {
