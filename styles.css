@@ -26,9 +26,7 @@ blockquote p {
   display: inline;
   font-size:40px;
 }
-.footer {
-  position: fixed;
-}
+
 p {text-align:justify}
 
 .sidebar {
