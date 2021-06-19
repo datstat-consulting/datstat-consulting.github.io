@@ -1,24 +1,3 @@
-body {font-family: 'Fira Sans', sans-serif;}
-
-h1 {text-align: center; font-family: 'Fira Sans', sans-serif;}
-
-h2 {text-align: center; font-family: 'Fira Sans', sans-serif;}
-
-aside {
-    float: left;
-    color: #aaa;
-}
-
-aside > p {
-    margin: .5rem;
-}
-
-p {
-    font-family: 'Fira Sans', sans-serif;
-    margin:20px;
-    font-size:1.3em;
-}
-
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
