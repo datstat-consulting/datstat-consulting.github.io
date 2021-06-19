@@ -12,7 +12,7 @@
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 50%;
+  width: 33%;
   padding: 10px;
 }
 
@@ -22,14 +22,20 @@
   display: table;
   clear: both;
 }
+
 </style>
 </head>
+    
+<header>
+</header>
+
 <body>
+    
     <h1 align: "center";>DATSTAT Consulting</h1>
     <p align: "justify";>We at DATSTAT wish to provide timely and relevant analysis to individuals and organization who need them. Our team of excellent analysts have the best tools for any job they face.</p>
     <h2 align: "center";>Our services</h2>
 
-<div class="row">
+<section class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Statistical Inference and Estimation</h2>
     <p>We perform hypothesis testing, A/B testing, Multivariate Analysis, Time Series Analysis, and more.</p>
@@ -38,18 +44,21 @@
     <h2>Economic and Financial Analysis</h2>
     <p>We perform impact evaluation, profit optimization, financial modeling, labor analysis, and more.</p>
   </div>
-  <div class="column" style="background-color:#ccc;">
+  <div class="column" style="background-color:#ddd;">
     <h2>Logistics and Transportation</h2>
     <p>We perform transportation modeling, supply chain optimization, routing optimization, schedule analysis, and more.</p>
   </div>
-</div>
+</section>
         
-<aside id="sidebar">
-    <div id="widget_1"><link href = "work.html">Our Work</link></div>
-    <div id="widget_2"><link href = "team.html">Our Analysts</link></div>
-    <div id="widget_3"><link href = "services.html">Our Services</link></div>
-</aside>
+
 </body>
-<footer>Copyright 2021 by DATSTAT Statistical and Research Consultancy</footer>
+<footer>
+        <aside id="sidebar">
+    <div id="widget_1"><a href = "work.html">Our Work</link></div>
+    <div id="widget_2"><a href = "team.html">Our Analysts</link></div>
+    <div id="widget_3"><a href = "services.html">Our Services</link></div>
+</aside>
+    
+    <p>Copyright 2021 by DATSTAT Statistical and Research Consultancy</p></footer>
 </html>
 
