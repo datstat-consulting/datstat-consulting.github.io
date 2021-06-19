@@ -4,16 +4,16 @@
 <link rel="stylesheet" href="styles.css" type = "text/css">
     <title>DATSTAT Consulting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
 * {
   box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
+/* Create three equal columns that float next to each other */
 .column {
   float: left;
   width: 33.3333333333%;
-  height: 16%;
   padding:10px;
 }
 
@@ -23,19 +23,31 @@
   display: table;
   clear: both;
 }
+  
+.twocols {
+  float: left;
+  width: 50%;
+  padding:10px;
+}
 
+  
+body {
+  font-family: "Raleway", sans-serif;
+  background-color:gray;
+  color:white;
+}
 </style>
-<link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200">
+
 </head>
     
 <header>
 </header>
 
-<body style="font-family:Raleway">
+<body>
     
-<h1 style = "background-color:black;color:white;text-align:center;padding:50x">DATSTAT Consulting</h1>
+<h1 style = "background-color:black;color:white;text-align:center;padding:50px">DATSTAT Consulting</h1>
 
-<h2>Why take a chance?</h2>
+<h2 style ="text-align:center">Why take a chance?</h2>
     
 <blockquote style="align:center;text-align:center;font-size:30px">In God we trust. All others must bring data.</blockquote>
 <p>
@@ -68,12 +80,15 @@ Will you still take chances with gut feelings and limited experience? Or will yo
 </body>
     <hr>
 <footer style="background-color:#aaa;color:white;">
-<aside id="sidebar" style="background-color:#aaa;font-size:1.5em;">
-    <div id="widget_1"><a href = "work.html" style="color:white">Our Work</a></div>
-    <div id="widget_2"><a href = "team.html" style="color:white">Our Analysts</a></div>
-    <div id="widget_3"><a href = "services.html" style="color:white">Our Services</a></div>
-</aside>
-
-<p>Copyright 2021 by DATSTAT Statistical and Research Consultancy</p>
+<div class = "row"style="">
+<div class = "column" id="sidebar" style="background-color:#aaa;font-size:1.5em;">
+    <p id="widget_1"><a href = "work.html" style="color:white">Our Work</a></p>
+    <p id="widget_2"><a href = "team.html" style="color:white">Our Analysts</a></p>
+    <p id="widget_3"><a href = "services.html" style="color:white">Our Services</a></p>
+</div>
+<div class = "twocols" style="font-size:1.5em;">
+  <p>Copyright 2021 by DATSTAT Statistical and Research Consultancy</p>
+  </div>
+</div>
 </footer>
 </html>
