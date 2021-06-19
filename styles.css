@@ -24,7 +24,8 @@ aside > p {
 
 p {
     font-family: 'Fira Sans', sans-serif;
-    margin:60px;
+    margin:20px;
+    font-size:20px;
 }
 
 blockquote {
