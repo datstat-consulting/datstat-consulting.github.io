@@ -78,3 +78,8 @@ p {text-align:justify}
     float: none;
   }
 }
+
+@font-face {
+  font-family:"deadender";
+  src: url("./DeadenderRegular.ttf") format("ttf");
+}
