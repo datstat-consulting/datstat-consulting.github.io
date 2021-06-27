@@ -59,8 +59,14 @@ p {text-align:justify}
 
 .content {
   margin-left: 200px;
-  padding: 1px 16px;
+  /*padding: 1px 16px;*/
   height: 1000px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color:#242120;
+  color:white;
 }
 
 @media screen and (max-width: 700px) {
