@@ -1,0 +1,30 @@
+<html>
+<body>
+
+<h1>Pokemon showdown salt video title generator</h1>
+
+<p>Click the button to generate a random salt video.</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  const persons = ["noob", "legendary spammer", "hacker"];
+  const description = ["cries tears of salt", "ragequits", "calls me a hacker"];
+  var pokemon = prompt("Please enter a Pokemon", "Luvdisc");
+
+if (pokemon != null) {
+  const random = Math.floor(Math.random() * persons.length);
+  var randomperson = persons[random];
+  const descchoose = Math.floor(Math.random() * description.length);
+  var randomdesc = description[descchoose];
+  document.getElementById("demo").innerHTML =
+  pokemon + " destroys SALTY " + randomperson + " who " + randomdesc + "!";
+}
+}
+</script>
+
+</body>
+</html>
