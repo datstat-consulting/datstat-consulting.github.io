@@ -137,4 +137,6 @@ body {
 button {
     margin: 0 auto;
     display: block;
+    position: absolute;
+    top: 50%;
 }
