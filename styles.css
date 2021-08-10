@@ -135,9 +135,6 @@ body {
 }
 
 button{
-position: relative;
-display: inline-block;
-left: 50%;
-transform: translateX(-50%);
+display: block;
 margin: 0 auto;
 }
