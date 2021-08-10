@@ -106,7 +106,35 @@ body {
   <hr>
 <section>
 <br/>
-  <div style = "text-align:center;align:center;float:center;"><a href = "mailto: datstat_consulting@aol.com"; style="background-color:#104497;color:white;font-size:25px;align:center;padding:10px">Contact Us Today!</a></div>
+    <div style = "text-align:center;align:center;float:center;margin:0 auto;display:block;" class="dropdown">
+  <button onclick="myFunction()" class="dropbtn" style="background-color:#104497;color:white;font-size:25px;padding:10px;text-decoration:underline;font-family:Raleway;">Contact Us Today!</button>
+      <div id="myDropdown" class="dropdown-content">
+    <a href="https://www.facebook.com/datstatconsulting/">Facebook</a>
+    <a href="mailto: datstat_consulting@aol.com">Email</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 <br/>
 <p style = "text-align:center">
 We will get in touch with you as soon as possible!
