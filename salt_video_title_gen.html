@@ -100,8 +100,10 @@ body {
 
 <script>
 function myFunction() {
-  const persons = ["noob", "legendary spammer", "hacker"];
-  const description = ["cries tears of salt", "ragequits", "calls me a hacker"];
+  const persons = ["noob", "legendary spammer", "hacker", "crybaby"];
+  const description = ["cries tears of salt", "ragequits", "calls me a hacker", "threatens to report me"];
+  const noobs = ["EXTREMELY TOXIC", "TOXIC", "ANGRY", "TRASH", "INCOMPETENT", "CRAP", "SALTY"];
+  const blasts = ["destroys", "obliterates", "demolishes". "shreds", "does in", "wipes", "ends", "deletes", "tears apart"];
   var pokemon = prompt("Please enter a Pokemon", "Luvdisc");
 
 if (pokemon != null) {
@@ -109,8 +111,12 @@ if (pokemon != null) {
   var randomperson = persons[random];
   const descchoose = Math.floor(Math.random() * description.length);
   var randomdesc = description[descchoose];
+  const actchoose = Math.floor(Math.random() * noobs.length);
+  var randnoob = noobs[actchoose];
+  const blastchoose = Math.floor(Math.random() * blasts.length);
+  var randblast = blasts[blastchoose];
   document.getElementById("demo").innerHTML =
-  pokemon + " destroys SALTY " + randomperson + " who " + randomdesc + "!";
+  pokemon + " " + randblast + " " + randnoob + " " + randomperson + " who " + randomdesc + "!";
 }
 }
 </script>
