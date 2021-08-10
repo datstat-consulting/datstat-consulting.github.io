@@ -133,3 +133,10 @@ body {
   height: 5%;
   position: relative;
 }
+
+button{
+position: relative;
+display: inline-block;
+left: 50%;
+transform: translateX(-50%);
+}
