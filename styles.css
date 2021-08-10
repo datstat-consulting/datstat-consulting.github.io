@@ -106,14 +106,14 @@ body {
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
   position: relative;
   background-color: #f1f1f1;
-  max-width: 20%;
+  min-width: 160px;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
