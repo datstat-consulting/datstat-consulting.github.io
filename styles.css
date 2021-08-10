@@ -139,4 +139,5 @@ position: relative;
 display: inline-block;
 left: 50%;
 transform: translateX(-50%);
+margin: 0 auto;
 }
