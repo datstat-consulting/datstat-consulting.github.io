@@ -113,7 +113,7 @@ body {
   display: none;
   position: relative;
   background-color: #f1f1f1;
-  min-width: 160px;
+  max-width: 20%;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
