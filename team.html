@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-200337808-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-200337808-1');
+</script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css" type = "text/css">
+    <title>Our Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+  .footer {
+  position: fixed;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that float next to each other */
+.column {
+  float: left;
+  width: 33.3333333333%;
+  padding:10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  
+.twocols {
+  float: left;
+  width: 50%;
+  padding:10px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color:#242120;
+  color:white;
+  margin: 0;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+
+<body>
+    
+<div class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="work.html">Our Work</a>
+  <a class="active" href="team.html">Team</a>
+  <a href="services.html">Services</a>
+</div>
+    
+<article class="content">
+<div style="background-color:#104497">
+<img src="team.png" alt="DATSTAT Consulting" width="25%" class="center">
+</div>
+    
+<h2 style="text-align:center;background-color:#202324;color:white;padding:10px">Chief Statistician</h2>
+<section class="row">
+    <div class="twocols">
+    <h2 style="color:white">Adriel Ong</h2>
+    <p style="color:white"><b>Adriel Ong</b> is a Statistician and Quantitative Analyst. He received his Bachelor of Science in Applied Economics from De La Salle University-Manila, and he is currently taking graduate studies in Mathematics in the Open University, UK. He has helped many individuals and organizations with timely analysis to suit their needs. He has long been interested in applying rigorous tools and methods to real world applications using data. To that end, he founded DATSTAT Consulting to better bring skills and expertise to those who need it, especially in provinces and places outside Metro Manila.</p>
+    <p style="color:white">One may view his Curriculum Vitae <a style="color:white" href="CV.pdf">here</a>.</p>
+  </div>
+  <div class="column">
+    <img src="me.png" alt="Adriel Ong" width = "30%">
+  </div>
+</section>
+<h2 style="text-align:center;background-color:#202324;color:white;padding:10px">The Team</h2>
+<section class="row">
+    <div class="twocols">
+    <h2 style="color:white">Economics and Finance</h2>
+    <p style="color:white"><b>Azriel Cais Baluyut</b> is a Financial Economics major who specializes in consumer behavior.</p>
+  </div>
+  <div class="column">
+ 
+  </div>
+</section>
+
+  <hr>
+<section>
+<br/>
+    <div style = "text-align:center;align:center;float:center;margin:0 auto;display:block;" class="dropdown">
+  <button onclick="myFunction()" class="dropbtn" style="background-color:#104497;color:white;font-size:25px;padding:10px;text-decoration:underline;font-family:Raleway;">Contact Us Today!</button>
+      <div id="myDropdown" class="dropdown-content">
+    <a href="https://www.facebook.com/datstatconsulting/">Facebook</a>
+    <a href="mailto: datstat_consulting@aol.com">Email</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<br/>
+<p style = "text-align:center">
+We will get in touch with you as soon as possible!
+</p>
+</section>
+    <hr>
+<footer style="color:white;font-size:1.5em">
+  <p>Copyright 2021 by DATSTAT Statistical and Research Consultancy</p>
+  <p>Balibago, Angeles, Pampanga</p>
+</footer>
+</article>
+</body>
+</html>
