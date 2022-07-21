@@ -25,9 +25,10 @@
 }
 
 /* Create three equal columns that float next to each other */
-.column {
+.column3 {
   float: left;
   width: 33.3333333333%;
+  height: 10%;
   padding:10px;
 }
 
@@ -41,6 +42,7 @@
 .twocols {
   float: left;
   width: 50%;
+  height: 10%;
   padding:10px;
 }
 
@@ -56,6 +58,51 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+  
+ /* Parallax image */
+  
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("photo1.jpg");
+  min-height: 50%;
+}
+
+.bgimg-2 {
+  background-image: url("photo2.jpg");
+  min-height: 50%;
+}
+
+.bgimg-3 {
+  background-image: url("photo3.jpg");
+  min-height: 50%;
+}
+  
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #000096;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+  
 </style>
 </head>
     
@@ -73,10 +120,20 @@ body {
 <img src="DATSTAT_logo.png" alt="DATSTAT Consulting" width="25%" class="center">
 </div>
   
-<blockquote style="align:center;text-align:center;font-size:30px;color:white;background-color:#202324">In God we trust - all others must bring data</blockquote>
-<h2 style ="text-align:center">Why take a chance?</h2>
-<p>
-For too long, managers and decision makers have relied on rules of thumb, personal experience, and intuition when facing challenges. These methods may serve some, but hurt others. No rule serves all situations. Thanks to advances in technology and science, we may now cut through the fog with light borne from data. Why take a chance when you can see what the real world says? Will you still take chances with gut feelings and limited experience? Or will you let the data speak for itself?</p>
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">Why take a chance?</span>
+  </div>
+</div>
+  
+
+  
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">Parallax Demo</h3>
+  <blockquote style="align:center;text-align:center;font-size:30px;color:white;background-color:#202324">In God we trust - all others must bring data</blockquote>
+  <p>For too long, managers and decision makers have relied on rules of thumb, personal experience, and intuition when facing challenges. These methods may serve some, but hurt others. No rule serves all situations. Thanks to advances in technology and science, we may now cut through the fog with light borne from data. Why take a chance when you can see what the real world says? Will you still take chances with gut feelings and limited experience? Or will you let the data speak for itself?</p>
+</div>
+  
 <br/>
     <div style = "text-align:center;align:center;float:center;margin:0 auto;display:block;" class="dropdown">
   <button onclick="myFunction()" class="dropbtn" style="background-color:#104497;color:white;font-size:25px;padding:10px;text-decoration:underline;font-family:Raleway;">Contact Us Today!</button>
@@ -108,22 +165,27 @@ window.onclick = function(event) {
 }
 </script>
 <br/>
-<p style = "text-align:center">
-We will get in touch with you as soon as possible!
-</p>
+  
+ <div class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">We will get in touch with you as soon as possible!</span>
+  </div>
+</div>
+  
+
     
 <h2 style = "background-color:#202324;color:white;text-align:center;padding:10px">Our services</h2>
 
 <section class="row">
-  <div class="column" style="background-color:#a78852;">
+  <div class="column3" style="background-color:#a78852;">
     <h2 style="color:white">Statistical Inference and Estimation</h2>
     <p style="color:white">We perform hypothesis testing, A/B testing, Multivariate Analysis, Time Series Analysis, and more.</p>
   </div>
-  <div class="column" style="background-color:#5271a7;">
+  <div class="column3" style="background-color:#5271a7;">
     <h2 style="color:white">Economic and Financial Analysis</h2>
     <p style="color:white">We perform impact evaluation, profit optimization, financial modeling, labor analysis, and more.</p>
   </div>
-  <div class="column" style="background-color:#a75d52;">
+  <div class="column3" style="background-color:#a75d52;">
     <h2 style="color:white">Logistics and Transportation</h2>
     <p style="color:white">We perform transportation modeling, supply chain optimization, routing, and more.</p>
   </div>
