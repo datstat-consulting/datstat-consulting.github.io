@@ -144,6 +144,24 @@ display: block;
 margin: 0 auto;
 }
 
+/* Parallax stuff */
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #104497;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
 @media only screen and (max-device-width: 1366px) {
   .parallax {
     background-attachment: scroll;
