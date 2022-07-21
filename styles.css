@@ -143,3 +143,9 @@ margin: 0 auto;
 display: block;
 margin: 0 auto;
 }
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
