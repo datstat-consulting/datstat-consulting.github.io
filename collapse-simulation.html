@@ -59,6 +59,11 @@
                         <div id="parameters-inputs">
                             <!-- Parameter inputs will be dynamically generated here -->
                         </div>
+                        <!-- Number of Jurisdictions -->
+                        <div class="parameter-group">
+                            <label for="R" class="form-label">Number of Jurisdictions (R): <i class="fas fa-info-circle text-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Number of Jurisdictions involved in the simulation"></i></label>
+                            <input type="number" class="form-control" id="R" min="2" value="5" required>
+                        </div>
                     </div>
                     <!-- Initial Conditions Section -->
                     <div class="col-md-6">
@@ -66,11 +71,6 @@
                         <hr>
                         <div id="initial-conditions-inputs">
                             <!-- Initial condition inputs will be dynamically generated here -->
-                        </div>
-                        <!-- Number of Jurisdictions -->
-                        <div class="parameter-group">
-                            <label for="R" class="form-label">Number of Jurisdictions (R):</label>
-                            <input type="number" class="form-control" id="R" min="2" value="5" required>
                         </div>
                     </div>
                 </div>
