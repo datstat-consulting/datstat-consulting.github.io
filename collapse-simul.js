@@ -303,14 +303,23 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index, params) {
     // Calculate Unit Entropy
     const H_units = H.map((H_val, idx) => H_val - H_comms[idx] - H_compute[idx]);
 
+    // Calculate Governance Weights (Average) across Jurisdictions
+    const governance_weights_avg = w_j0.map(weights => {
+        const sum = weights.reduce((a, b) => a + b, 0);
+        return sum / weights.length;
+    });
+
+    // Rename coordination_benefits to "Decentralized Coordination"
+    const decentralized_coordination = coordination_benefits;
+
     // Clear previous plots
     const plotsDiv = document.getElementById('plots');
     plotsDiv.innerHTML = ''; // Clear previous plots
 
     // Create separate containers for each plot
     const plotIds = [
-        'plot1', // Specialization, Governance, and Complexity Over Time
-        'plot2', // Entropy Components Over Time
+        'plot1', // Specialization, Governance, Complexity, Governance Weights (Average)
+        'plot2', // Entropy Components, Decentralized Coordination
         'plot3', // Utility Over Time
         'plot4'  // Utility vs. Entropy (Phase Diagram)
     ];
@@ -324,13 +333,14 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index, params) {
         plotsDiv.appendChild(plotContainer);
     });
 
-    // 1. Specialization, Governance, and Complexity Over Time
+    // 1. Specialization, Governance, Complexity, and Governance Weights (Average) Over Time
     const traceS = { x: t, y: S, mode: 'lines', name: 'Specialization (S(t))', line: { color: '#1f77b4' } };
     const traceG = { x: t, y: G, mode: 'lines', name: 'Governance (G(t))', line: { color: '#ff7f0e' } };
     const traceC = { x: t, y: C, mode: 'lines', name: 'Complexity (C(t))', line: { color: '#2ca02c' } };
-    const data1 = [traceS, traceG, traceC];
+    const traceGW_avg = { x: t, y: governance_weights_avg, mode: 'lines', name: 'Governance Weights (Average)', line: { color: '#8c564b', dash: 'dash' } };
+    const data1 = [traceS, traceG, traceC, traceGW_avg];
     const layout1 = {
-        title: 'Specialization, Governance, and Complexity Over Time',
+        title: 'Specialization, Governance, Complexity, and Governance Weights Over Time',
         xaxis: { title: 'Time' },
         yaxis: { title: 'Value' },
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
@@ -338,23 +348,24 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index, params) {
     };
     Plotly.newPlot('plot1', data1, layout1, {responsive: true});
 
-    // 2. Entropy Components Over Time
+    // 2. Entropy Components and Decentralized Coordination Over Time
     const traceH = { x: t, y: H, mode: 'lines', name: 'Total Entropy (H(t))', line: { color: '#d62728' } };
     const traceH_comms = { x: t, y: H_comms, mode: 'lines', name: 'Communication Entropy (H_comms(t))', line: { color: '#9467bd' } };
     const traceH_compute = { x: t, y: H_compute, mode: 'lines', name: 'Computational Entropy (H_compute(t))', line: { color: '#8c564b' } };
     const traceH_units = { x: t, y: H_units, mode: 'lines', name: 'Unit Entropy (H_units(t))', line: { color: '#e377c2', dash: 'dash' } };
+    const traceDecentralizedCoordination = { x: t, y: decentralized_coordination, mode: 'lines', name: 'Decentralized Coordination', line: { color: '#7f7f7f', dash: 'dot' } };
     const traceH_crit = { 
         x: [t[0], t[t.length - 1]], 
         y: [H_crit, H_crit], 
         mode: 'lines', 
         name: 'Critical Entropy (H_crit)', 
-        line: { dash: 'dot', color: '#7f7f7f' }
+        line: { dash: 'dashdot', color: '#000000' }
     };
-    const data2 = [traceH, traceH_comms, traceH_compute, traceH_units, traceH_crit];
+    const data2 = [traceH, traceH_comms, traceH_compute, traceH_units, traceDecentralizedCoordination, traceH_crit];
     const layout2 = {
-        title: 'Entropy Components Over Time',
+        title: 'Entropy Components and Decentralized Coordination Over Time',
         xaxis: { title: 'Time' },
-        yaxis: { title: 'Entropy' },
+        yaxis: { title: 'Entropy / Coordination' },
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
         margin: { t: 50 }
     };
@@ -381,14 +392,14 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index, params) {
 
     // 4. Utility vs. Entropy (Phase Diagram)
     const tracePhase = { x: H, y: U, mode: 'lines', name: 'Utility vs. Entropy', line: { color: '#bcbd22' } };
-    const traceHcrit = { 
+    const traceHcritPhase = { 
         x: [H_crit, H_crit], 
         y: [Math.min(...U), Math.max(...U)], 
         mode: 'lines', 
         name: 'Critical Entropy (H_crit)', 
         line: { dash: 'dashdot', color: '#7f7f7f' } 
     };
-    const data4 = [tracePhase, traceHcrit];
+    const data4 = [tracePhase, traceHcritPhase];
     const layout4 = {
         title: 'Utility vs. Entropy (Phase Diagram)',
         xaxis: { title: 'Total Entropy (H(t))' },
