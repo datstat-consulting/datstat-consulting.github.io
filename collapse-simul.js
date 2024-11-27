@@ -286,7 +286,7 @@ function findSaddlePoint(U, H) {
 }
 
 // Plot Results using Plotly.js
-function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
+function plotResults(t, y, U, C, R, H_crit, H_crit_index, params) {
     const num_w_jk = (R * (R - 1)) / 2;
 
     // Extract variables for plotting
@@ -481,7 +481,7 @@ function runSimulation(event) {
         }
 
         // Plot the results
-        plotResults(t_sim, y, U, C, R, H_crit, H_crit_index);
+        plotResults(t_sim, y, U, C, R, H_crit, H_crit_index, params);
     } catch (error) {
         showAlert(error.message, 'danger');
         console.error(error);
