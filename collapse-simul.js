@@ -303,9 +303,26 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
     // Calculate Unit Entropy
     const H_units = H.map((H_val, idx) => H_val - H_comms[idx] - H_compute[idx]);
 
-    // Plot Configuration
+    // Clear previous plots
     const plotsDiv = document.getElementById('plots');
     plotsDiv.innerHTML = ''; // Clear previous plots
+
+    // Create separate containers for each plot
+    const plotIds = [
+        'plot1', // Specialization, Governance, and Complexity Over Time
+        'plot2', // Entropy Components Over Time
+        'plot3', // Utility Over Time
+        'plot4'  // Utility vs. Entropy (Phase Diagram)
+    ];
+
+    plotIds.forEach(id => {
+        const plotContainer = document.createElement('div');
+        plotContainer.id = id;
+        plotContainer.style.width = '100%';
+        plotContainer.style.height = '600px';
+        plotContainer.className = 'mb-5';
+        plotsDiv.appendChild(plotContainer);
+    });
 
     // 1. Specialization, Governance, and Complexity Over Time
     const traceS = { x: t, y: S, mode: 'lines', name: 'Specialization (S(t))', line: { color: '#1f77b4' } };
@@ -319,7 +336,7 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
         margin: { t: 50 }
     };
-    Plotly.newPlot('plots', data1, layout1, {responsive: true});
+    Plotly.newPlot('plot1', data1, layout1, {responsive: true});
 
     // 2. Entropy Components Over Time
     const traceH = { x: t, y: H, mode: 'lines', name: 'Total Entropy (H(t))', line: { color: '#d62728' } };
@@ -341,7 +358,7 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
         margin: { t: 50 }
     };
-    Plotly.newPlot('plots', data2, layout2, {responsive: true});
+    Plotly.newPlot('plot2', data2, layout2, {responsive: true});
 
     // 3. Utility Over Time
     const traceU = { x: t, y: U, mode: 'lines', name: 'Utility (U(t))', line: { color: '#17becf' } };
@@ -360,7 +377,7 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
         margin: { t: 50 }
     };
-    Plotly.newPlot('plots', data3, layout3, {responsive: true});
+    Plotly.newPlot('plot3', data3, layout3, {responsive: true});
 
     // 4. Utility vs. Entropy (Phase Diagram)
     const tracePhase = { x: H, y: U, mode: 'lines', name: 'Utility vs. Entropy', line: { color: '#bcbd22' } };
@@ -379,7 +396,7 @@ function plotResults(t, y, U, C, R, H_crit, H_crit_index) {
         legend: { orientation: 'h', x: 0.5, xanchor: 'center' },
         margin: { t: 50 }
     };
-    Plotly.newPlot('plots', data4, layout4, {responsive: true});
+    Plotly.newPlot('plot4', data4, layout4, {responsive: true});
 }
 
 // Display Alert Messages
@@ -409,40 +426,37 @@ function runSimulation(event) {
 
     // Read parameters from input elements
     let params = {};
-    parameterDefinitions.forEach(param => {
-        const value = parseFloat(document.getElementById(param.name).value);
-        if (isNaN(value)) {
-            showAlert(`Invalid input for ${param.label}. Please enter a valid number.`, 'danger');
-            throw new Error(`Invalid input for ${param.label}`);
-        }
-        params[param.name] = value;
-    });
-
-    let initial_conditions = {};
-    initialConditionDefinitions.forEach(cond => {
-        const value = parseFloat(document.getElementById(cond.name).value);
-        if (isNaN(value)) {
-            showAlert(`Invalid input for ${cond.label}. Please enter a valid number.`, 'danger');
-            throw new Error(`Invalid input for ${cond.label}`);
-        }
-        initial_conditions[cond.name] = value;
-    });
-
-    // Read number of jurisdictions R
-    const R_input = parseInt(document.getElementById('R').value);
-    if (isNaN(R_input) || R_input < 2) {
-        showAlert(`Invalid input for Number of Jurisdictions (R). Please enter an integer >= 2.`, 'danger');
-        throw new Error('Invalid input for R');
-    }
-    const R = R_input;
-
-    // Time array
-    let t = [];
-    for(let tt = t_start; tt <= t_end; tt += dt) {
-        t.push(tt);
-    }
-
     try {
+        parameterDefinitions.forEach(param => {
+            const value = parseFloat(document.getElementById(param.name).value);
+            if (isNaN(value)) {
+                throw new Error(`Invalid input for ${param.label}.`);
+            }
+            params[param.name] = value;
+        });
+
+        let initial_conditions = {};
+        initialConditionDefinitions.forEach(cond => {
+            const value = parseFloat(document.getElementById(cond.name).value);
+            if (isNaN(value)) {
+                throw new Error(`Invalid input for ${cond.label}.`);
+            }
+            initial_conditions[cond.name] = value;
+        });
+
+        // Read number of jurisdictions R
+        const R_input = parseInt(document.getElementById('R').value);
+        if (isNaN(R_input) || R_input < 2) {
+            throw new Error('Number of Jurisdictions (R) must be an integer >= 2.');
+        }
+        const R = R_input;
+
+        // Time array
+        let t = [];
+        for(let tt = t_start; tt <= t_end; tt += dt) {
+            t.push(tt);
+        }
+
         // Run the simulation
         const result = eulerMaruyamaIntegration(params, initial_conditions, R, t);
         let y = result.y;
@@ -469,6 +483,7 @@ function runSimulation(event) {
         // Plot the results
         plotResults(t_sim, y, U, C, R, H_crit, H_crit_index);
     } catch (error) {
+        showAlert(error.message, 'danger');
         console.error(error);
     } finally {
         // Hide loading overlay
