@@ -430,7 +430,7 @@ function runSimulation(event) {
         parameterDefinitions.forEach(param => {
             const value = parseFloat(document.getElementById(param.name).value);
             if (isNaN(value)) {
-                throw new Error(`Invalid input for ${param.label}.`);
+                throw new Error(`Invalid input for ${param.label}. Please enter a valid number.`);
             }
             params[param.name] = value;
         });
@@ -439,7 +439,7 @@ function runSimulation(event) {
         initialConditionDefinitions.forEach(cond => {
             const value = parseFloat(document.getElementById(cond.name).value);
             if (isNaN(value)) {
-                throw new Error(`Invalid input for ${cond.label}.`);
+                throw new Error(`Invalid input for ${cond.label}. Please enter a valid number.`);
             }
             initial_conditions[cond.name] = value;
         });
@@ -447,7 +447,7 @@ function runSimulation(event) {
         // Read number of jurisdictions R
         const R_input = parseInt(document.getElementById('R').value);
         if (isNaN(R_input) || R_input < 2) {
-            throw new Error('Number of Jurisdictions (R) must be an integer >= 2.');
+            throw new Error('Number of Jurisdictions (R) must be an integer ≥ 2.');
         }
         const R = R_input;
 
