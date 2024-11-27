@@ -9,21 +9,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Custom CSS -->
-    <link href="styles.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
+        /* Embedded Custom Styles */
+
         body {
             background-color: #f8f9fa;
             padding-top: 20px;
             padding-bottom: 20px;
         }
+
         .parameter-group {
             margin-bottom: 15px;
         }
+
         .plot-container {
             margin-top: 30px;
         }
+
         .loading-overlay {
             position: fixed;
             top: 0;
@@ -37,6 +39,21 @@
             z-index: 9999;
             display: none;
         }
+
+        /* Adjust Plotly plots to occupy full width */
+        .plot-container .js-plotly-plot {
+            width: 100% !important;
+            height: 600px !important;
+        }
+
+        /* Style for the Run Simulation button */
+        .btn-success {
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +61,7 @@
 <div class="container">
     <h1 class="text-center mb-4"><i class="fas fa-project-diagram"></i> Organizational Dynamics Simulation</h1>
 
-    <!-- Parameters Panel -->
+    <!-- Parameters & Initial Conditions Panel -->
     <div class="card mb-4">
         <div class="card-header bg-primary text-white">
             <h4 class="mb-0"><i class="fas fa-sliders-h"></i> Parameters & Initial Conditions</h4>
@@ -61,7 +78,10 @@
                         </div>
                         <!-- Number of Jurisdictions -->
                         <div class="parameter-group">
-                            <label for="R" class="form-label">Number of Jurisdictions (R): <i class="fas fa-info-circle text-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Number of Jurisdictions involved in the simulation"></i></label>
+                            <label for="R" class="form-label">
+                                Number of Jurisdictions (R):
+                                <i class="fas fa-info-circle text-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Defines how many jurisdictions are involved in the simulation. Must be an integer ≥ 2."></i>
+                            </label>
                             <input type="number" class="form-control" id="R" min="2" value="5" required>
                         </div>
                     </div>
